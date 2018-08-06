@@ -6,6 +6,8 @@ A sample API server for use as an optimization subject.
 
   *  Clone this repository
   *  Install dependencies `npm install`
+  *  Install Redis
+  *  Start the Redis server
   *  Start the server `npm start`
   *  Go to [http://localhost:3000/](http://localhost:3000/) to confirm the server is running
 
