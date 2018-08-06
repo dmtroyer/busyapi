@@ -6,11 +6,18 @@
 var debug = require('debug')('busyapi:server');
 var http = require('http');
 var cluster = require('express-cluster');
+var redis = require('redis');
+
+/**
+ * Seed the Redis instance.
+ */
+var client = redis.createClient();
+client.set('lastUsageId', 0);
 
 /**
  * Create clustered HTTP servers.
  */
-cluster(function() {
+cluster(function () {
   var app = require('../app');
   var server = http.createServer(app);
 
